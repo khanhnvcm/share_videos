@@ -1,0 +1,145 @@
+inherit_from:
+  - .rubocop_todo.yml
+
+inherit_gem:
+  rubocop-raksul:
+    - config/default.yml
+    - config/rails.yml
+    - config/rspec.yml
+
+AllCops:
+  TargetRubyVersion: 2.6
+  Exclude:
+    - "vendor/bundle/**/*"
+    - "vendor/bin/**/*"
+    - ",/**/*"
+    - ".git/**/*"
+    - "bin/*"
+    - "db/schema.rb"
+    - "db/seeds/**/*"
+    - "db/migrate/*.rb"
+    - "log/**/*"
+    - "node_modules/**/*"
+    - "public/**/*"
+    - "tmp/**/*"
+    - "config/initializers/*"
+    - "Guardfile"
+#
+# Metrics
+#
+Metrics/AbcSize:
+  Max: 30
+
+Metrics/LineLength:
+  Max: 160
+
+Metrics/ClassLength:
+  Max: 160
+
+Metrics/MethodLength:
+  Max: 20
+
+Metrics/BlockLength:
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Max: 8
+
+Metrics/PerceivedComplexity:
+  Max: 8
+
+#
+# Lint
+#
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - "spec/**/*"
+
+#
+# Layout
+#
+Layout/AccessModifierIndentation:
+  EnforcedStyle: outdent
+
+Layout/CaseIndentation:
+  EnforcedStyle: end
+  IndentOneStep: false
+  IndentationWidth: 2
+
+Layout/EmptyLinesAroundBlockBody:
+  EnforcedStyle: no_empty_lines
+
+Layout/EmptyLinesAroundClassBody:
+  EnforcedStyle: no_empty_lines
+
+Layout/EmptyLinesAroundModuleBody:
+  EnforcedStyle: no_empty_lines
+
+Layout/IndentArray:
+  EnforcedStyle: consistent
+
+Layout/IndentHash:
+  EnforcedStyle: consistent
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Layout/SpaceBeforeComma:
+  Enabled: false
+
+Layout/SpaceBeforeFirstArg:
+  Enabled: false
+
+Layout/SpaceAroundOperators:
+  Enabled: true
+#
+# Style
+#
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: consistent_comma
+
+Style/Lambda:
+  EnforcedStyle: literal
+
+#
+# Naming
+#
+Naming/UncommunicativeMethodParamName:
+  Enabled: false
+
+#
+# Rspec
+#
+RSpec/NestedGroups:
+  Enabled: false
+
+RSpec/DescribedClass:
+  EnforcedStyle: described_class
+
+RSpec/ExpectChange:
+  EnforcedStyle: method_call
+
+RSpec/ItBehavesLike:
+  EnforcedStyle: it_behaves_like
+
+RSpec/MessageExpectation:
+  EnforcedStyle: expect
+
+RSpec/MessageSpies:
+  EnforcedStyle: receive
+
+RSpec/ScatteredSetup:
+  Enabled: false
+
+RSpec/LetSetup:
+  Enabled: false
+
+RSpec/ContextWording:
+  Prefixes:
+    - when
+    - then
+    - with
+    - without
+
+RSpec/MultipleExpectations:
+  Max: 4
