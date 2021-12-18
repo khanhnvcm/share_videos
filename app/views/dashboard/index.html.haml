@@ -1,0 +1,28 @@
+.row
+  .col-12
+    %nav.navbar.navbar-light.bg-light.justify-content-between
+      %a.navbar-brand Funny Movies
+      - if current_user
+        %strong= current_user.full_name
+      - else
+        %form.form-inline
+          %input.form-control.mr-sm-2{"aria-label" => "Email", :placeholder => "Email", :type => "email"}/
+          %input.form-control.mr-sm-2{"aria-label" => "Password", :placeholder => "Password", :type => "password"}/
+          %button.btn.btn-outline-success.my-2.my-sm-0{:type => "submit"} Login
+          %button.btn.btn-outline-success.my-2.my-sm-0{:type => "submit"} Register
+.row
+  .col-6.offset-3.mt-4
+    .row.mt-4
+      .col-7
+        = video_embed_url_generator("http://www.youtube.com/watch?v=nOEw9iiopwI")
+        
+      .col-5
+        %p asjkdhakjsdhaskjdhkajsd
+    .row.mt-4
+      .col-7
+        = video_embed_url_generator("http://www.youtube.com/watch?v=nOEw9iiopwI")
+        
+      .col-5
+        %p asjkdhakjsdhaskjdhkajsd
+:javascript
+  new MediaElementPlayer('#player1');
